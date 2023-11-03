@@ -1,0 +1,110 @@
+/* @font-face {
+	font-family: 'HankenGrotesk';
+	font-display: swap;
+	font-weight: 300 600;
+	src: url('../results-summary-component-main/assets/fonts/HankenGrotesk-VariableFont_wght.ttf')format('truetype');
+} */
+
+  
+
+:root{
+	/* --font-family-default: 'HankenGrotesk'; */
+	--desktop-breakpoint: 375px;
+	  
+	/* Primary */
+	--p1-hsl: 158, 36%, 37%;
+	--p2-hsl: 30, 38%, 92%;
+	
+	/* Neutral */
+	--n1-hsl: 212, 21%, 14%;
+	--n2-hsl: 228, 12%, 48%;
+	--white-hsl: 0, 0%, 100%;
+	
+	--fw-light: 300;
+	--fw-normal: 400;
+	--fw-bold: 600;
+	
+    --fs-300: 0.875rem;
+	--fs-400: 1.125rem;
+	--fs-500: 1.25rem;
+	--fs-600: 1.5rem;
+	--fs-700: 1.75rem;
+	--fs-800: 2rem;
+	--fs-900: 5rem;
+	 
+	--border-radius: .30rem;
+	--padding: 1.75rem;
+
+}
+
+*, *::before, *::after{
+	box-sizing: border-box;
+}
+
+* {
+	border: 0;
+	margin: 0;
+	font: inherit;
+}
+
+img,svg{
+	display: block;
+	max-width: 100%;
+}
+
+body{
+    background-color: hsl(var(--p2-hsl));
+}
+
+main{
+    /* height: 100vh; */
+}
+
+.card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 35rem;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    
+    .product-info{
+        background-color: hsl(var(--white-hsl));
+        display: grid;
+        padding: var(--padding);
+
+
+
+        .category, .desc, .cross{
+            color: hsl(var(--n2-hsl));
+        }
+
+        .category, .desc{
+            font-size: var(--fs-300);
+        }
+
+        .category{
+            
+            letter-spacing: .2rem;
+            text-transform: uppercase;
+        }
+
+        h3{
+            font-size: var(--fs-800);
+        }
+
+        .discounted{
+            color: hsl(var(--p1-hsl));
+        }
+    
+        & button{
+            display: flex;
+            border-radius: var(--border-radius);
+            justify-content: center;
+            
+            background-color: hsl(var(--p1-hsl));
+            color: hsl(var(--white-hsl));
+        }
+    }
+
+   
+}
