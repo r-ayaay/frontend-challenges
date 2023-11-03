@@ -62,6 +62,7 @@ main{
 
 .card{
     display: grid;
+    
     grid-template-columns: 1fr 1fr;
     max-width: 35rem;
     overflow: hidden;
@@ -70,6 +71,7 @@ main{
     .product-info{
         background-color: hsl(var(--white-hsl));
         display: grid;
+        /* align-content: start; */
         padding: var(--padding);
 
 
@@ -95,12 +97,17 @@ main{
         .discounted{
             color: hsl(var(--p1-hsl));
         }
+
+        .cross{
+            text-decoration: line-through;
+        }
     
         & button{
             display: flex;
+            gap:.5rem;
             border-radius: var(--border-radius);
             justify-content: center;
-            
+            align-items: center;
             background-color: hsl(var(--p1-hsl));
             color: hsl(var(--white-hsl));
         }
