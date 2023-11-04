@@ -1,14 +1,20 @@
-/* @font-face {
-	font-family: 'HankenGrotesk';
+@font-face {
+	font-family: 'Montserrat';
 	font-display: swap;
-	font-weight: 300 600;
-	src: url('../results-summary-component-main/assets/fonts/HankenGrotesk-VariableFont_wght.ttf')format('truetype');
-} */
+	font-weight: 500 700;
+	src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf')format('truetype');
+}
 
-  
+@font-face {
+	font-family: 'Fraunces';
+	font-display: swap;
+	font-weight: 700;
+	src: url('../assets/fonts/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf')format('truetype');
+}  
 
 :root{
-	/* --font-family-default: 'HankenGrotesk'; */
+	--font-family-default: 'Montserrat';
+    --font-family-secondary: 'Fraunces';
 	--desktop-breakpoint: 375px;
 	  
 	/* Primary */
@@ -21,8 +27,8 @@
 	--white-hsl: 0, 0%, 100%;
 	
 	--fw-light: 300;
-	--fw-normal: 400;
-	--fw-bold: 600;
+	--fw-normal: 500;
+	--fw-bold: 700;
 	
     --fs-300: 0.875rem;
 	--fs-400: 1.125rem;
@@ -32,7 +38,7 @@
 	--fs-800: 2rem;
 	--fs-900: 5rem;
 	 
-	--border-radius: .30rem;
+	--border-radius: .40rem;
 	--padding: 1.75rem;
 
 }
@@ -54,11 +60,15 @@ img,svg{
 
 body{
     background-color: hsl(var(--p2-hsl));
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    font-family: 'Montserrat';
+    font-size: var(--fs-300);
+    font-weight: var(--fw-normal);
+
 }
 
-main{
-    /* height: 100vh; */
-}
 
 .card{
     display: grid;
@@ -70,31 +80,42 @@ main{
     
     .product-info{
         background-color: hsl(var(--white-hsl));
-        display: grid;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        /* gap: auto; */
         /* align-content: start; */
         padding: var(--padding);
-
-
 
         .category, .desc, .cross{
             color: hsl(var(--n2-hsl));
         }
 
-        .category, .desc{
-            font-size: var(--fs-300);
-        }
-
         .category{
-            
             letter-spacing: .2rem;
             text-transform: uppercase;
         }
 
-        h3{
+        h3, .discounted{
+            line-height: 2rem;
+            font-family: 'Fraunces';
             font-size: var(--fs-800);
+            font-weight: var(--fw-bold);
+        }
+
+        .desc{
+            line-height: 1.30rem;
+        }
+
+        .price{
+            display: flex;
+            gap:1rem;
+
+            align-items: center;
         }
 
         .discounted{
+            
             color: hsl(var(--p1-hsl));
         }
 
@@ -110,6 +131,7 @@ main{
             align-items: center;
             background-color: hsl(var(--p1-hsl));
             color: hsl(var(--white-hsl));
+            padding: .75rem 0;
         }
     }
 
