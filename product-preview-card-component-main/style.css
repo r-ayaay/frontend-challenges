@@ -1,0 +1,139 @@
+@font-face {
+	font-family: 'Montserrat';
+	font-display: swap;
+	font-weight: 500 700;
+	src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf')format('truetype');
+}
+
+@font-face {
+	font-family: 'Fraunces';
+	font-display: swap;
+	font-weight: 700;
+	src: url('../assets/fonts/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf')format('truetype');
+}  
+
+:root{
+	--font-family-default: 'Montserrat';
+    --font-family-secondary: 'Fraunces';
+	--desktop-breakpoint: 375px;
+	  
+	/* Primary */
+	--p1-hsl: 158, 36%, 37%;
+	--p2-hsl: 30, 38%, 92%;
+	
+	/* Neutral */
+	--n1-hsl: 212, 21%, 14%;
+	--n2-hsl: 228, 12%, 48%;
+	--white-hsl: 0, 0%, 100%;
+	
+	--fw-light: 300;
+	--fw-normal: 500;
+	--fw-bold: 700;
+	
+    --fs-300: 0.875rem;
+	--fs-400: 1.125rem;
+	--fs-500: 1.25rem;
+	--fs-600: 1.5rem;
+	--fs-700: 1.75rem;
+	--fs-800: 2rem;
+	--fs-900: 5rem;
+	 
+	--border-radius: .40rem;
+	--padding: 1.75rem;
+
+}
+
+*, *::before, *::after{
+	box-sizing: border-box;
+}
+
+* {
+	border: 0;
+	margin: 0;
+	font: inherit;
+}
+
+img,svg{
+	display: block;
+	max-width: 100%;
+}
+
+body{
+    background-color: hsl(var(--p2-hsl));
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    font-family: 'Montserrat';
+    font-size: var(--fs-300);
+    font-weight: var(--fw-normal);
+
+}
+
+
+.card{
+    display: grid;
+    
+    grid-template-columns: 1fr 1fr;
+    max-width: 35rem;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    
+    .product-info{
+        background-color: hsl(var(--white-hsl));
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        /* gap: auto; */
+        /* align-content: start; */
+        padding: var(--padding);
+
+        .category, .desc, .cross{
+            color: hsl(var(--n2-hsl));
+        }
+
+        .category{
+            letter-spacing: .2rem;
+            text-transform: uppercase;
+        }
+
+        h3, .discounted{
+            line-height: 2rem;
+            font-family: 'Fraunces';
+            font-size: var(--fs-800);
+            font-weight: var(--fw-bold);
+        }
+
+        .desc{
+            line-height: 1.30rem;
+        }
+
+        .price{
+            display: flex;
+            gap:1rem;
+
+            align-items: center;
+        }
+
+        .discounted{
+            
+            color: hsl(var(--p1-hsl));
+        }
+
+        .cross{
+            text-decoration: line-through;
+        }
+    
+        & button{
+            display: flex;
+            gap:.5rem;
+            border-radius: var(--border-radius);
+            justify-content: center;
+            align-items: center;
+            background-color: hsl(var(--p1-hsl));
+            color: hsl(var(--white-hsl));
+            padding: .75rem 0;
+        }
+    }
+
+   
+}
